@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %} Персидский мудрец {% endblock %}
+{% block content %}
+<div class="container pt-5 my-5 border">
+<h3 align="center">Увы! Персидский мудрец не может ответить на ваш запрос.</h3>
+</div>
+<form action="/" method = 'GET' target="_blank">
+    <fieldset>
+        <input type="submit" class="btn btn-primary btn-lg btn-block" value="Попробовать ещё раз!">
+    </fieldset>
+</form>
+{% endblock %}

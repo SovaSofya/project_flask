@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %} Ответ персидского мудреца {% endblock %}
+{% block content %}
+<form action="/" method = 'GET'>
+    <button type="submit" class="btn bg-secondary btn-lg">Вернуться к описанию</button>
+</form>
+<div class="container p-5 my-5 bg-dark text-white">
+<h2 align="center">
+    {% for x in answer %}
+        {{ x }} <br>
+    {% endfor %}
+</h2>
+</div>
+<div class="container pt-5 my-5 border" align="center">
+    <p align="center"><b>Нравится ли вам ответ мудреца?</b></p>
+    <form action="/work_statistics" method = 'GET' target="_blank">
+        <fieldset>
+            <p>
+            <input type="radio" class="form-check-input" name="rated" value="0" required> Не нравится :( <br>
+            <input type="radio" class="form-check-input" name="rated" value="1"> Нравится! <br>
+            <input type="radio" class="form-check-input" name="rated" value="2"> Очень нравится! <br>
+            </p>
+            <input type="submit" class="btn btn-primary btn-lg btn-block" value="Оценить и посмотреть статистику!"> <br>
+        </fieldset>
+    </form>
+</div>
+{% endblock %}

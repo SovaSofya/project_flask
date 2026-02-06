@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %} Статистика {% endblock %}
+{% block content %}
+<form action="/" method = 'GET'>
+    <button type="submit" class="btn bg-secondary btn-lg">Вернуться к описанию</button>
+</form>
+<div class ="row">
+    <div class="col p-5 w-50 my-5 border">
+        <table class="table">
+            <tr>
+                <th>Всего на сайте побывало людей:</th>
+                <td>{{ all_info['total_people'] }}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class ="row">
+    <div class="col p-5 w-50 my-5 border">
+        <table class="table">
+            <thead>
+                <tr><th>На данный момент самые популярные стихи следующие:</th></tr>
+            </thead>
+            {% for x in all_info['data_popular'] %}
+            <tr>
+                <td>
+                    {% for i in x %}
+                        {{ i }} <br>
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="col p-5 w-50 my-5 border">
+        <table class="table">
+            <thead>
+                <tr><th>Визуализации:</th></tr>
+            </thead>
+            <tr>
+            <td>
+                <img src={{ url_for('static', filename="images/imgplot1.png") }}/>
+            </td>
+            </tr>
+            <tr>
+            <td>
+                <img src={{ url_for('static', filename="images/imgplot2.png") }}/>
+            </td>
+            </tr>
+        </table>
+    </div>
+</div>
+{% endblock %}
